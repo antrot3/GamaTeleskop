@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="pyramid web application">
+    <meta name="author" content="FESB">
+    <link rel="shortcut icon" href="${request.static_url('cta_project:static/css/images/MAGIC_logo_black.png')}">
+	
+    <title>Long term monitoring</title>
+
+
+    <!-- Custom styles for this scaffold -->
+	
+	<link href="${request.static_url('cta_project:static/css/bootstrap.min.css')}" rel="stylesheet" media="screen">
+    <link href="${request.static_url('cta_project:static/css/bootstrap-responsive.min.css')}" rel="stylesheet" media="screen">
+    <link href="${request.static_url('cta_project:static/css/bootstrap-select.min.css')}" rel="stylesheet" media="screen">
+    <link href="${request.static_url('cta_project:static/css/select2.css')}" rel="stylesheet" media="screen">
+    <link href="${request.static_url('cta_project:static/css/tablecloth.css')}" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="${request.static_url('cta_project:static/css/jquery-ui-1.9.2.custom.css')}">
+	<link rel="stylesheet" type="text/css" href="${request.static_url('cta_project:static/css/main.css')}">
+	<script src="${request.static_url('cta_project:static/js/jquery-1.9.1.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/bootstrap.min.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/bootstrap-select.min.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/jquery.metadata.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/jquery.tablecloth.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/jquery.tablesorter.min.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/jquery-ui-1.9.2.custom.min.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('cta_project:static/js/dygraph-combined.js')}"></script>
+
+	<script src="${request.static_url('cta_project:static/js/main.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/button.js')}"></script>
+
+  </head>
+
+ <body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="?"><img src="${request.static_url('cta_project:static/css/images/MAGIC_logo_black.png')}" alt="MAGIC logo" width="30" height="30">CTA Long Term Monitoring</a>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+                              <li class="active"><a href="?p=data">data</a></li>
+                              <li><a href="http://www.magic.iac.es/operations/datacheck/" target="_blank">CTA Datacheck</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="main-wrap container">
+		2016-05-17  2012-10-16 total: 934<form id="input-form" action="?" method="get" class=" ">
+	<input type="hidden" name="action" value="macro">
+
+	
+	<div class="container-fluid pull-left input-wrap">
+		
+		<div class="">
+			<div class="inputrow">
+
+				<fieldset>
+					<legend>Param X</legend>
+			    	<select name="param1-telescope" id="param1-telescope" class="selectpicker" data-live-search="true" style="display: none;">
+						<option class="spec" selected="">M1</option>
+						<option class="spec">M2</option>
+					</select>
+					<br>
+					<select name="param1" id = "param1" class="selectpicker" data-live-search="true" style="display: none;">
+						<optgroup label="DAQ">
+														<option value="calq_cal">Calibration runs: Calibration Charge</option>
+														<option value="calq_int">Interleaved runs: Calibration Charge </option>
+														<option value="calq_sig">Charge for Signal Events </option>
+														<option value="bias_sig">Bias of Signal Extractor </option>
+														<option value="hitfrac_sig">Hit Fraction of Signal Events </option>
+														<option value="arrtm_cal">Calibration runs: Arrival Time</option>
+														<option value="arrtm_int">Interleaved runs: Arrival Time</option>
+														<option value="arrtm_sig">Signal events: Arrival Time</option>
+														<option value="arrtmrms_cal">Calibration runs: Arrival Time RMS </option>
+														<option value="arrtmrms_int" selected="">Interleaved runs: Arrival Time RMS</option>
+														<option value="arrtmrms_sig">Signal events: Arrival Time RMS</option>
+														<option value="ped_ped">Pedestal runs: Pedestal</option>
+														<option value="ped_int">Interleaved runs: Pedestal</option>
+														<option value="npe_int">Interleaved runs: Number of Photoelectrons</option>
+														<option value="pedrms_ped">Pedestal runs: Pedestal RMS</option>
+														<option value="pedrms_int">Interleaved runs: Pedestal RMS</option>
+														<option value="cfact_int">Interleaved runs: C Factor</option>
+												</optgroup>
+						<optgroup label="Central control">
+														<option value="drvzd">Zenith angle</option>
+														<option value="drvdev_daq">Control Deviation of the Motors, DAQ data</option>
+														<option value="camhv_daq">Camera HV, DAQ data</option>
+														<option value="camdc_daq">Camera DC, DAQ data</option>
+														<option value="camdt_daq">Discriminator Threshold, DAQ data</option>
+														<option value="campd_daq">PD, DAQ data</option>
+														<option value="campixtemp_daq">Pixel Temperature Camera, DAQ data</option>
+														<option value="meanpixtemp_daq">Pixel Temperature, DAQ data</option>
+														<option value="camclusttemp">(Non-zero) Cluster Temperature</option>
+														<option value="camvcelbias_daq">VCELs bias, DAQ data</option>
+														<option value="camlv1temp">LV1 Temperature</option>
+														<option value="camlv2temp">LV2 Temperature</option>
+														<option value="camlv1hum">LV1 Humidity</option>
+														<option value="camlv2hum">LV2 Humidity</option>
+														<option value="camcoolfcptopleft">Camera Cooling: FCPTopLeft Temperature</option>
+														<option value="camcoolfcpbottright">Camera Cooling: FCPBottRight Temperature</option>
+														<option value="camcoolrcptopleft">Camera Cooling: RCPTopLeft Temperature</option>
+														<option value="camcoolrcpbottright">Camera Cooling: RCPBottRight Temperature</option>
+														<option value="camcoolchasiastopleft">Camera Cooling: ChasiasTopLeft Temperature</option>
+														<option value="camcoolchasiasbottright">Camera Cooling: ChasiasBottRight Temperature</option>
+														<option value="camcoolchasiasftopleft">Camera Cooling: ChasiasFTopLeft Temperature</option>
+														<option value="camcoolchasiasfbottright">Camera Cooling: ChasiasFBottRight Temperature</option>
+														<option value="camcoolrearbottleft">Camera Cooling: RearBottLeft Humidity </option>
+														<option value="camcoolreartopleft">Camera Cooling: RearTopLeft Humidity</option>
+														<option value="camcoolfrontbottright">Camera Cooling: FrontBottRight Humidity </option>
+														<option value="camcoolfronttopright">Camera Cooling: FrontTopRight Humidity</option>
+														<option value="amcerr">AMC Number of Panels in Error State</option>
+														<option value="l1t">L1 Trigger Rate (Before Prescaler)</option>
+														<option value="l2t">L2 Trigger Rate (After Prescaler)</option>
+														<option value="l2t_daq">L2 Trigger Rate (After Prescaler), DAQ data</option>
+														<option value="sumt_globr">Sum-Trigger-II Global Rate</option>
+														<option value="sumt_l3">Sum-Trigger-II L3 Trigger Rate</option>
+														<option value="sumt_dtw">Sum-Trigger-II Working Thresholds</option>
+														<option value="sumt_cbt">Sum-Trigger-II Clip board temperatures</option>
+														<option value="calbtemp1">Calibration Box Temperature</option>
+														<option value="calbtemp2">Calibration Box Temperature, next to heating plate</option>
+														<option value="calbhum">Calibration Box Humidity</option>
+														<option value="sg_devaz">Azimuthal Misspointing * Sin(Zenith)</option>
+														<option value="sg_devzd">Zenith Misspointing</option>
+														<option value="sg_camcx">Camera Centre X</option>
+														<option value="sg_camcy">Camera Centre Y</option>
+														<option value="sg_stars">Number of Correlated Stars</option>
+														<option value="sg_bright">Sky Brightness</option>
+														<option value="wea_temp">Atmospheric Temperature</option>
+														<option value="wea_hum">Atmospheric Humidity</option>
+														<option value="wea_ws">Wind Speed</option>
+														<option value="wea_gust">Wind Gusts</option>
+														<option value="wea_see">Seeing (from TNG)</option>
+														<option value="wea_dust">Dust concentration (from TNG)</option>
+														<option value="rec_temp">Recievers Temperature</option>
+														<option value="camtd_daq">Trigger Delay, DAQ data </option>
+														<option value="camipr_daq">IPR, DAQ data</option>
+														<option value="camiprerr_daq">IPR Error, DAQ data</option>
+														<option value="pyro_cloud">Pyrometer, Cloudiness</option>
+														<option value="pyro_skyt">Pyrometer, Sky Temperature</option>
+														<option value="muon_psf">PSF from muons</option>
+														<option value="muon_psfn">Number of muons for PSF calc</option>
+														<option value="muon_size">Mean muon size</option>
+												</optgroup>
+					</select>							
+					<br>
+					<select name="param1-type" id="param1-type" class="selectpicker" style="display: none;">
+						<option selected="">Mean</option>
+						<option>Median</option>
+						<option>Max</option>
+						<option>Min</option>
+						<option>RMS</option>
+					</select>
+					<div class="checkbox">
+						<label for="p1errors">
+							<input type="hidden" name="param1_errors" value="false">
+							<input type="checkbox" name="param1_errors" id="p1errors" value="true" checked="">
+							Error bars (RMS values)
+						</label>
+					</div>
+				</fieldset>
+			</div>
+
+			<script type="text/javascript">
+			$('#param1-type').change(function(){
+				var val = $(this).val();
+				//alert(val)
+				if(val=="Mean" || val=="Median")
+				{
+					$('#p1errors').parent().show()
+				} else {
+					$('#p1errors').attr('checked',null).parent().hide()
+				}
+			})
+			</script>
+
+			<div class="inputrow">
+				<fieldset>
+					<legend>Param Y</legend>
+					<select name="param2-telescope" id="param2-telescope" class="selectpicker" style="display: none;">
+						<option selected="">M1</option>
+						<option>M2</option>
+					</select>
+					<br>
+					<select name="param2" id="param2" class="selectpicker" style="display: none;">
+						<optgroup label="DAQ">
+														<option value="calq_cal">Calibration runs: Calibration Charge</option>
+														<option value="calq_int">Interleaved runs: Calibration Charge</option>
+														<option value="calq_sig">Charge for Signal Events </option>
+														<option value="bias_sig">Bias of Signal Extractor </option>
+														<option value="hitfrac_sig">Hit Fraction of Signal Events </option>
+														<option value="arrtm_cal">Calibration runs: Arrival Time</option>
+														<option value="arrtm_int">Interleaved runs: Arrival Time</option>
+														<option value="arrtm_sig">Signal events: Arrival Time</option>
+														<option value="arrtmrms_cal">Calibration runs: Arrival Time RMS </option>
+														<option value="arrtmrms_int">Interleaved runs: Arrival Time RMS</option>
+														<option value="arrtmrms_sig">Signal events: Arrival Time RMS</option>
+														<option value="ped_ped">Pedestal runs: Pedestal</option>
+														<option value="ped_int">Interleaved runs: Pedestal</option>
+														<option value="npe_int">Interleaved runs: Number of Photoelectrons</option>
+														<option value="pedrms_ped">Pedestal runs: Pedestal RMS</option>
+														<option value="pedrms_int">Interleaved runs: Pedestal RMS</option>
+														<option value="cfact_int">Interleaved runs: C Factor</option>
+												</optgroup>
+						<optgroup label="Central control">
+														<option value="drvzd">Zenith angle</option>
+														<option value="drvdev_daq">Control Deviation of the Motors, DAQ data</option>
+														<option value="camhv_daq">Camera HV, DAQ data</option>
+														<option value="camdc_daq">Camera DC, DAQ data</option>
+														<option value="camdt_daq">Discriminator Threshold, DAQ data</option>
+														<option value="campd_daq">PD, DAQ data</option>
+														<option value="campixtemp_daq">Pixel Temperature Camera, DAQ data</option>
+														<option value="meanpixtemp_daq">Pixel Temperature, DAQ data</option>
+														<option value="camclusttemp">(Non-zero) Cluster Temperature</option>
+														<option value="camvcelbias_daq">VCELs bias, DAQ data</option>
+														<option value="camlv1temp">LV1 Temperature</option>
+														<option value="camlv2temp">LV2 Temperature</option>
+														<option value="camlv1hum">LV1 Humidity</option>
+														<option value="camlv2hum">LV2 Humidity</option>
+														<option value="camcoolfcptopleft">Camera Cooling: FCPTopLeft Temperature</option>
+														<option value="camcoolfcpbottright">Camera Cooling: FCPBottRight Temperature</option>
+														<option value="camcoolrcptopleft">Camera Cooling: RCPTopLeft Temperature</option>
+														<option value="camcoolrcpbottright">Camera Cooling: RCPBottRight Temperature</option>
+														<option value="camcoolchasiastopleft">Camera Cooling: ChasiasTopLeft Temperature</option>
+														<option value="camcoolchasiasbottright">Camera Cooling: ChasiasBottRight Temperature</option>
+														<option value="camcoolchasiasftopleft">Camera Cooling: ChasiasFTopLeft Temperature</option>
+														<option value="camcoolchasiasfbottright">Camera Cooling: ChasiasFBottRight Temperature</option>
+														<option value="camcoolrearbottleft">Camera Cooling: RearBottLeft Humidity </option>
+														<option value="camcoolreartopleft">Camera Cooling: RearTopLeft Humidity</option>
+														<option value="camcoolfrontbottright">Camera Cooling: FrontBottRight Humidity </option>
+														<option value="camcoolfronttopright">Camera Cooling: FrontTopRight Humidity</option>
+														<option value="amcerr">AMC Number of Panels in Error State</option>
+														<option value="l1t">L1 Trigger Rate (Before Prescaler)</option>
+														<option value="l2t">L2 Trigger Rate (After Prescaler)</option>
+														<option value="l2t_daq">L2 Trigger Rate (After Prescaler), DAQ data</option>
+														<option value="sumt_globr">Sum-Trigger-II Global Rate</option>
+														<option value="sumt_l3">Sum-Trigger-II L3 Trigger Rate</option>
+														<option value="sumt_dtw">Sum-Trigger-II Working Thresholds</option>
+														<option value="sumt_cbt">Sum-Trigger-II Clip board temperatures</option>
+														<option value="calbtemp1">Calibration Box Temperature</option>
+														<option value="calbtemp2">Calibration Box Temperature, next to heating plate</option>
+														<option value="calbhum">Calibration Box Humidity</option>
+														<option value="sg_devaz">Azimuthal Misspointing * Sin(Zenith)</option>
+														<option value="sg_devzd">Zenith Misspointing</option>
+														<option value="sg_camcx">Camera Centre X</option>
+														<option value="sg_camcy">Camera Centre Y</option>
+														<option value="sg_stars">Number of Correlated Stars</option>
+														<option value="sg_bright">Sky Brightness</option>
+														<option value="wea_temp">Atmospheric Temperature</option>
+														<option value="wea_hum">Atmospheric Humidity</option>
+														<option value="wea_ws">Wind Speed</option>
+														<option value="wea_gust">Wind Gusts</option>
+														<option value="wea_see">Seeing (from TNG)</option>
+														<option value="wea_dust">Dust concentration (from TNG)</option>
+														<option selected="" value="rec_temp">Recievers Temperature</option>
+														<option value="camtd_daq">Trigger Delay, DAQ data </option>
+														<option value="camipr_daq">IPR, DAQ data</option>
+														<option value="camiprerr_daq">IPR Error, DAQ data</option>
+														<option value="pyro_cloud">Pyrometer, Cloudiness</option>
+														<option value="pyro_skyt">Pyrometer, Sky Temperature</option>
+														<option value="muon_psf">PSF from muons</option>
+														<option value="muon_psfn">Number of muons for PSF calc</option>
+														<option value="muon_size">Mean muon size</option>
+												</optgroup>
+					</select>
+					<br>
+					<select name="param2-type" id="param2-type" class="selectpicker" style="display: none;">
+						<option selected="">Mean</option>
+						<option>Median</option>
+						<option>Max</option>
+						<option>Min</option>
+						<option>RMS</option>
+					</select>
+					<div class="checkbox">
+						<label for="p2errors">
+							<input type="hidden" name="param2_errors" value="false">
+							<input type="checkbox" name="param2_errors" id="p2errors" value="true" checked="">
+							Error bars (RMS values)
+						</label>
+					</div>
+				</fieldset>
+					
+			</div>
+
+			<div class="">
+
+				<fieldset>
+					<legend>Date range</legend>
+
+					<div class="inputrow">
+						<label for="datefrom" class="control-label">Date from:</label>
+						<div class="input-append">
+					      <input id="datefrom" name="datefrom" type="text" class="datepicker hasDatepicker" placeholder="date from">
+					      <span class="add-on"><i class="icon-calendar"></i></span>
+				    	</div>
+				    </div>
+
+				    <div class="inputrow">
+						<label for="dateto">Date to:</label>
+						<div class="input-append">
+					      <input id="dateto" name="dateto" type="text" class="datepicker hasDatepicker" placeholder="date to">
+					      <span class="add-on"><i class="icon-calendar"></i></span>
+				    	</div>
+			    	</div>
+		    	</fieldset>
+
+	   		</div>
+			<input type="submit" class="btn btn-block pull-left" value="Run macro">
+		</div>
+
+	</div>
+
+
+	<br>
+
+
+<div class="output pull-left">
+    <div id="graphdiv9" style="width:700px; height:300px;"></div>
+	<div class="clearfix"></div>
+	
+
+
+	<script type="text/javascript">
+		show(0)
+		function show(n)
+		{
+			$('#img-tabs a').removeClass('selected').eq(n).addClass('selected')
+			$('#charts #i1').hide().eq(n).show()
+		}
+	</script>
+
+                        
+      <div id="graphdiv2" style="width:700px; height:300px;"></div>
+      <div id="graphdiv3" style="width:700px; height:300px;"></div>
+
+
+     <div>
+        <span class="dyhelp"> <b> HOVER</b> over the graph to display values for specific dates</span>
+			 <br>
+        <span class="dyhelp"><b>CLICK AND DRAG</b> on the graph to zoom in on a specific date or y-value range</span>
+			 <br>
+        <span class="dyhelp"><b>DOUBLE CLICK</b> to reset to the default date range</span>
+			 <br>
+        <span class="dyhelp">Use the <b>INPUT BOX</b> to adjust the moving average span (days):</span>
+        <input type="text" value="1" name="rollvalue" id="inproll" size="10" maxlength="10" style="width: 30px;">
+      </div>
+
+
+<script type="text/javascript">
+       /* g1 = new Dygraph(
+             document.getElementById("graphdiv1"),"output/2012-10-16-2016-05-17-wea_temp-mean-M1-rec_temp-mean-M1-p1etrue-p2etrue1.csv",
+             {
+               title: 'wea_temp, mean, M1'+" vs Time",
+               pointSize: 2,
+               drawPoints: true,
+               highlightCircleSize: 4,
+               labels: [ "Date", 'wea_temp, mean, M1' ],
+               //labels: [ "Date", "Parameter X" ],
+               rollPeriod: 1,
+               //showRoller: true,
+               showRoller: false,
+               errorBars: true,
+               //valueRange: [0,125]
+             }
+        );*/
+
+$(function(){
+	$('.btn.btn-block.pull-left').click(function(){
+        g9 = new Dygraph(
+             document.getElementById("graphdiv9"), 
+			 "http://127.0.0.1:6543/csv2",
+				   {}
+        );
+	});
+});
+/*
+        g0 = new Dygraph(
+             document.getElementById("graphdiv0"), [[ new Date("2009/07/12"), 100, 200 ],[ new Date("2009/07/19"), 150, 220 ],[ new Date("2009/07/25"), 180, 180 ],[ new Date("2009/08/02"), 250, 120 ]],
+             {
+               title: 'wea_temp, mean, M1'+" vs Time",
+               pointSize: 2,
+               drawPoints: true,
+               highlightCircleSize: 4,
+               labels: [ "Date", 'wea_temp, mean, M1','ss' ],
+             }
+        );
+
+*/
+
+
+    /* function showdyi(input){
+        g2 = new Dygraph(
+             document.getElementById("graphdiv2"),input+"1.csv",
+             {
+               title: 'wea_temp, mean, M1'+" vs Time",
+               pointSize: 2,
+               drawPoints: true,
+               highlightCircleSize: 4,
+               labels: [ "Date", 'wea_temp, mean, M1' ],
+               //labels: [ "Date", "Parameter X" ],
+               rollPeriod: 1,
+               //showRoller: true,
+               showRoller: false,
+               errorBars: true,
+               //valueRange: [0,125]
+             }
+        );
+        g3 = new Dygraph(
+             document.getElementById("graphdiv3"),input+"2.csv",
+             {
+               title: 'rec_temp, mean, M1'+" vs Time",
+               //title: "Parameter Y vs Time",
+               pointSize: 2,
+               drawPoints: true,
+               highlightCircleSize: 4,
+               labels: [ "Date", 'rec_temp, mean, M1' ],
+               //labels: [ "Date", "Parameter Y" ],
+               rollPeriod: 1,
+               //showRoller: true,
+               showRoller: false,
+               errorBars: true,
+               //valueRange: [0,125]
+             }
+        );
+     }
+*/
+
+</script>
+</div>
+
+
+<script>
+$('#search').change(filter).keyup(filter)
+function filter(){
+	var str = $('#search').val();
+	if(str!=""){
+		$('#data tr:gt(0)').hide();
+		$('#data tr:gt(0)').each(function(){
+			var tr = $(this);
+			if( tr.html().indexOf(str)>1)
+			{
+				tr.stop().show();
+			} 
+		})
+	} else{
+		$('#data tr:gt(0)').show()
+	}
+}
+
+$('#data').tablecloth({sortable:true});
+
+$('#datatable').hide()
+
+function showTable()
+{
+	$('#datatable').toggle();
+}
+
+$(document).on("propertychange keyup input paste keypress", '#inproll', function (e) {
+   var code = e.keyCode || e.which;
+var frm_element = document.getElementById('inproll');
+g2.adjustRoll(frm_element.value);
+g3.adjustRoll(frm_element.value);
+   if (code == 10 || code == 13) {
+       return false;
+   }
+});
+
+
+</script>
+
+
+
+	<script type="text/javascript">
+		$('#param2-type').change(function(){
+			var val = $(this).val();
+			//alert(val)
+			if(val=="Mean" || val=="Median")
+			{
+				$('#p2errors').parent().show()
+			} else {
+				$('#p2errors').attr('checked',null).parent().hide()
+			}
+		})
+	</script>
+
+</form>
+<script>
+	  $('.selectpicker').selectpicker();
+	  //$('.select2').select2();
+
+	  $('.datepicker').datepicker({
+	  	changeMonth: true,
+      	changeYear: true,
+      	dateFormat:"yy-mm-dd",
+      	maxDate:"2016-04-15",
+      	minDate:"2016-01-15"
+	  })
+
+	  var maxdate = '2016-05-17'
+	  var mindate = '2012-10-16'
+	  var dateParts = maxdate.match(/(\d+)/g)
+      var dateto = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);  
+      dateParts = mindate.match(/(\d+)/g)
+      var datefrom = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]); 
+
+
+	  $('#dateto').datepicker('setDate', dateto)
+	  $('#datefrom').datepicker('setDate', datefrom)
+	  $('#dateto').datepicker('setDate', '2016-04-15')
+
+	  $('#input-form').submit(function(){
+
+	  	$.post('?ajax-action=macro', $(this).serialize(), function(data){
+	  		$('#output').fadeOut(200,function(){$(this).html(data).fadeIn(200)})
+	  	})	
+	  	return false;
+	  })
+</script>
+
+		<div class="clear"></div>
+                <fieldset>
+                <legend>  </legend>
+                <p> For questions, please contact CTA <a href="mailto:magic-datacheck@irb.hr">datacheck group</a>
+                </p></fieldset>
+		<br>
+		<br>
+	</div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><select class="ui-datepicker-month" data-handler="selectMonth" data-event="change"><option value="0" selected="selected">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option></select><select class="ui-datepicker-year" data-handler="selectYear" data-event="change"><option value="2015" selected="selected">2015</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td><td class="  ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default ui-state-active" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">16</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">17</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">23</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">24</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2015"><a class="ui-state-default" href="#">31</a></td></tr></tbody></table></div>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>
