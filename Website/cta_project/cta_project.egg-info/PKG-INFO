@@ -3,14 +3,14 @@ Name: cta-project
 Version: 0.0
 Summary: cta_project
 Home-page: https://github.com/niallo/pyramid_mongodb
-Author: Niall O'Higgins
-Author-email: nialljohiggins@gmail.com
+Author: Josip Matić
+Author-email: jmatic01@fesb,hr
 License: UNKNOWN
 Description: cta_project README
         
         
         
-        
+        Change 1
 Keywords: web pyramid pylons mongodb
 Platform: UNKNOWN
 Classifier: Programming Language :: Python

@@ -4,11 +4,38 @@ This git project is made of four esencial parts:
 3.Website for data analysis 
 4.Rendering Grafhs on website
 
-First part is saved in directory Sql to mongoDB
+->First part is saved in directory Sql to mongoDB
+WIll be added Soon..
 
-Second part is saved in directory Data to mongoDB
+->Second part is saved in directory Data to mongoDB
+Step 1:Run from cmd mongod 
+Step 2:Run from second cmd mongod. type use "Your-DBNAME"
+Step 3:Open Test.js in text editor replace in line 2 'Diplomski' with "Your-DBNAME" 
+Step 4: txt file in this directory is output file off root macros and it represents Data wich needs to bee added to "Your-DBNAME" database
+Step 5: in Test.js replece in line 3 LT_db_M1_2012_11_19.txt wit your Root output name.
+Step 6: type Run Test.js 
+Step 7: View changes in robomongo.
 
-Third part is save in Website directory
+->Third part is save in Website directory
+Open directory of this porject:
+Step 1 -instal pycharm
+Step 2 -install pymongo when requested
+Step 3- In /cta_project/viewes.py set under variable temperature_data= open('%YOUR ROUTE TO CSV FILE%'),
+do same thing in line under Response=FileResponse
+Step 4- run project
+Step 5- install dependecies
+Step 6- click on url shown in console.
 
-Fourth part is saved in Graphs Rendering directory
+->Fourth part is saved in Graphs Rendering directory
+Two ways: run on local server or run on normal server
+Firs way (run on web server):
+Step 1:Yust coppy index.php file on server with filezila and run it with browser
+Second way (run on local server)
+Step 1: Install Xampp
+Step 2: Install phpmyadmi
+Step 3: Wiev php Version (guides easly found on google)
+Step 4: Download and install mongodb.dll for coresponding Version of php
+Step 5: Under line 'Must be after mbstring as it depends on it' in php.ini file in xampp directory add 
+this line 'extension=php_mongo.dll'
 
+https://www.jetbrains.com
