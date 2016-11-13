@@ -1,0 +1,14 @@
+This git project is made of four esencial parts:
+1.Transforming old Sql database to mongoDB
+2.Transforming Output root files to Mongodb structure
+3.Website for data analysis 
+4.Rendering Grafhs on website
+
+First part is saved in directory Sql to mongoDB
+
+Second part is saved in directory Data to mongoDB
+
+Third part is save in Website directory
+
+Fourth part is saved in Graphs Rendering directory
+
