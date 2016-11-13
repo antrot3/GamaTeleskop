@@ -5,7 +5,7 @@ This git project is made of four esencial parts:
 4.Rendering Grafhs on website
 
 ->First part is saved in directory Sql to mongoDB
-WIll be added Soon..
+instructions here http://linuxpitstop.com/migrate-mysql-to-mongodb-using-mongify-utility-linux/
 
 ->Second part is saved in directory Data to mongoDB
 Step 1:Run from cmd mongod 
