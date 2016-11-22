@@ -9,7 +9,7 @@ def my_view(request):
     request.db.authenticate('cta_project','fesbstudent11')
     dumps = request.db.mycollection.find_one()
     json_pars = dumps['temperature_details']
-    temperature_data = open('C:/Users/Ante/Desktop/teleskop/GamaTeleskop/Website/cta_project/cta_project/CSV files/temperatures2.csv', 'w')
+    temperature_data = open('C:/Users/Ante/Desktop/teleskop/GamaTeleskop/Website/cta_project/cta_project/CSV files/temperatures.csv', 'w')
     csvwriter = csv.writer(temperature_data)
     count = 0
     for temp in json_pars:
@@ -22,7 +22,7 @@ def my_view(request):
     return {'project':'cta_project'}
 def csvview(request):
 	response = FileResponse(
-		'C:/Users/Ante/Desktop/teleskop/GamaTeleskop/Website/cta_project/cta_project/CSV files/temperatures2.csv',
+		'C:/Users/Ante/Desktop/teleskop/GamaTeleskop/Website/cta_project/cta_project/CSV files/temperatures.csv',
 		request=request,
 		content_type='csv'
 		)
