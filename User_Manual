@@ -5,7 +5,9 @@ This git project is made of four esencial parts:
 4.Rendering Grafhs on website
 
 ->First part is saved in directory Sql to mongoDB
-instructions here http://linuxpitstop.com/migrate-mysql-to-mongodb-using-mongify-utility-linux/
+instructions here http://linuxpitstop.com/migrate-mysql-to-mongodb-using-mongify-utility-linux/ 
+or use Phpmyadmin and export old database in csv file and simply add it to mongo using this code
+mongoimport -d mydb -c things --type csv --file mysql_exported_table-dataset_params.csv --headerline
 
 ->Second part is saved in directory Data to mongoDB
 Step 1:Run from cmd mongod 
