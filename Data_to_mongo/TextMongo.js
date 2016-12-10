@@ -2,7 +2,7 @@ conn= new Mongo();
 db= conn.getDB("symmetrybaza"); // add database name here or replace with symmetrybaza
 var file= cat('LT_db_M1_2012_11_19.txt') //use diffrent txt file to manimulate it
 var file2=file.slice(11);
-var date=file.substr(0,11);
+var date=file.substr(0,10);
 var array= file2.split(/(\s+)/);
 print(array.length);
 var col=[];	 
