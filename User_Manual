@@ -38,6 +38,6 @@ Step 2: Install phpmyadmi
 Step 3: Wiev php Version (guides easly found on google)
 Step 4: Download and install mongodb.dll for coresponding Version of php
 Step 5: Under line 'Must be after mbstring as it depends on it' in php.ini file in xampp directory add 
-this line 'extension=php_mongo.dll'
+this line 'extension=php_mongo.dll's
 
 https://www.jetbrains.com
