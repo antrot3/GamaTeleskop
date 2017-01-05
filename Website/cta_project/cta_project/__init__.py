@@ -16,8 +16,8 @@ def main(global_config, **settings):
     config.add_static_view('static', 'cta_project:static')
     config.include('pyramid_chameleon')
     config.add_route('csv2' , '/csv2')
-    config.add_route('wea_ws', '/wea_ws')
     config.add_view('cta_project.views.csvview', route_name = 'csv2')
+    config.add_route('wea_ws', '/wea_ws')
     config.add_view('cta_project.views.wea_ws', route_name = 'wea_ws')
     config.add_route('wea_hum', '/wea_hum')
     config.add_view('cta_project.views.wea_hum', route_name = 'wea_hum')
@@ -1036,7 +1036,1027 @@ def main(global_config, **settings):
     config.add_view('cta_project.views.pedrms_intyM2', route_name = 'pedrms_intyM2')
 
     config.add_route('cfact_intyM2', '/cfact_intyM2')
-    config.add_view('cta_project.views.cfact_intyM2', route_name = 'cfact_intyM2')	
+    config.add_view('cta_project.views.cfact_intyM2', route_name = 'cfact_intyM2')
+    config.add_route('wea_wsmm', '/wea_wsmm')
+    config.add_view('cta_project.views.wea_wsmm', route_name = 'wea_wsmm')
+    config.add_route('wea_hummm', '/wea_hummm')
+    config.add_view('cta_project.views.wea_hummm', route_name = 'wea_hummm')
+    config.add_route('wea_gustmm', '/wea_gustmm')
+    config.add_view('cta_project.views.wea_gustmm', route_name = 'wea_gustmm')
+	
+    config.add_route('wea_seemm', '/wea_seemm')
+    config.add_view('cta_project.views.wea_seemm', route_name = 'wea_seemm')
+	
+    config.add_route('wea_dustmm', '/wea_dustmm')
+    config.add_view('cta_project.views.wea_dustmm', route_name = 'wea_dustmm')	
+	
+    config.add_route('rec_tempmm', '/rec_tempmm')
+    config.add_view('cta_project.views.rec_tempmm', route_name = 'rec_tempmm')	
+	
+    config.add_route('camtd_daqmm', '/camtd_daqmm')
+    config.add_view('cta_project.views.camtd_daqmm', route_name = 'camtd_daqmm')
+	
+    config.add_route('camipr_daqmm', '/camipr_daqmm')
+    config.add_view('cta_project.views.camipr_daqmm', route_name = 'camipr_daqmm')	
+	
+    config.add_route('camiprerr_daqmm', '/camiprerr_daqmm')
+    config.add_view('cta_project.views.camiprerr_daqmm', route_name = 'camiprerr_daqmm')
+	
+    config.add_route('calq_calmm', '/calq_calmm')
+    config.add_view('cta_project.views.calq_calmm', route_name = 'calq_calmm')
+	
+    config.add_route('calq_intmm', '/calq_intmm')
+    config.add_view('cta_project.views.calq_intmm', route_name = 'calq_intmm')	
+	
+    config.add_route('calq_sigmm', '/calq_sigmm')
+    config.add_view('cta_project.views.calq_sigmm', route_name = 'calq_sigmm')
+
+    config.add_route('drvzdmm', '/drvzdmm')
+    config.add_view('cta_project.views.drvzdmm', route_name = 'drvzdmm')
+	
+    config.add_route('drvdev_daqmm', '/drvdev_daqmm')
+    config.add_view('cta_project.views.drvdev_daqmm', route_name = 'drvdev_daqmm')	
+	
+    config.add_route('camhv_daqmm', '/camhv_daqmm')
+    config.add_view('cta_project.views.camhv_daqmm', route_name = 'camhv_daqmm')	
+	
+    config.add_route('camdc_daqmm', '/camdc_daqmm')
+    config.add_view('cta_project.views.camdc_daqmm', route_name = 'camdc_daqmm')
+	
+    config.add_route('camdt_daqmm', '/camdt_daqmm')
+    config.add_view('cta_project.views.camdt_daqmm', route_name = 'camdt_daqmm')	
+	
+    config.add_route('campd_daqmm', '/campd_daqmm')
+    config.add_view('cta_project.views.campd_daqmm', route_name = 'campd_daqmm')
+	
+    config.add_route('campixtemp_daqmm', '/campixtemp_daqmm')
+    config.add_view('cta_project.views.campixtemp_daqmm', route_name = 'campixtemp_daqmm')
+	
+    config.add_route('meanpixtemp_daqmm', '/meanpixtemp_daqmm')
+    config.add_view('cta_project.views.meanpixtemp_daqmm', route_name = 'meanpixtemp_daqmm')	
+	
+    config.add_route('camclusttempmm', '/camclusttempmm')
+    config.add_view('cta_project.views.camclusttempmm', route_name = 'camclusttempmm')
+
+    config.add_route('camvcelbias_daqmm', '/camvcelbias_daqmm')
+    config.add_view('cta_project.views.camvcelbias_daqmm', route_name = 'camvcelbias_daqmm')
+	
+    config.add_route('camlv1tempmm', '/camlv1tempmm')
+    config.add_view('cta_project.views.camlv1tempmm', route_name = 'camlv1tempmm')	
+	
+    config.add_route('camlv2tempmm', '/camlv2tempmm')
+    config.add_view('cta_project.views.camlv2tempmm', route_name = 'camlv2tempmm')	
+	
+    config.add_route('camlv1hummm', '/camlv1hummm')
+    config.add_view('cta_project.views.camlv1hummm', route_name = 'camlv1hummm')
+	
+    config.add_route('camlv2hummm', '/camlv2hummm')
+    config.add_view('cta_project.views.camlv2hummm', route_name = 'camlv2hummm')	
+	
+    config.add_route('camcoolfcptopleftmm', '/camcoolfcptopleftmm')
+    config.add_view('cta_project.views.camcoolfcptopleftmm', route_name = 'camcoolfcptopleftmm')
+	
+    config.add_route('camcoolfcpbottrightmm', '/camcoolfcpbottrightmm')
+    config.add_view('cta_project.views.camcoolfcpbottrightmm', route_name = 'camcoolfcpbottrightmm')
+	
+    config.add_route('camcoolrcptopleftmm', '/camcoolrcptopleftmm')
+    config.add_view('cta_project.views.camcoolrcptopleftmm', route_name = 'camcoolrcptopleftmm')	
+	
+    config.add_route('camcoolrcpbottrightmm', '/camcoolrcpbottrightmm')
+    config.add_view('cta_project.views.camcoolrcpbottrightmm', route_name = 'camcoolrcpbottrightmm')
+
+    config.add_route('camcoolchasiastopleftmm', '/camcoolchasiastopleftmm')
+    config.add_view('cta_project.views.camcoolchasiastopleftmm', route_name = 'camcoolchasiastopleftmm')
+	
+    config.add_route('camcoolchasiasbottrightmm', '/camcoolchasiasbottrightmm')
+    config.add_view('cta_project.views.camcoolchasiasbottrightmm', route_name = 'camcoolchasiasbottrightmm')	
+	
+    config.add_route('camcoolchasiasftopleftmm', '/camcoolchasiasftopleftmm')
+    config.add_view('cta_project.views.camcoolchasiasftopleftmm', route_name = 'camcoolchasiasftopleftmm')	
+	
+    config.add_route('camcoolchasiasfbottrightmm', '/camcoolchasiasfbottrightmm')
+    config.add_view('cta_project.views.camcoolchasiasfbottrightmm', route_name = 'camcoolchasiasfbottrightmm')
+	
+    config.add_route('camcoolrearbottleftmm', '/camcoolrearbottleftmm')
+    config.add_view('cta_project.views.camcoolrearbottleftmm', route_name = 'camcoolrearbottleftmm')	
+	
+    config.add_route('camcoolreartopleftmm', '/camcoolreartopleftmm')
+    config.add_view('cta_project.views.camcoolreartopleftmm', route_name = 'camcoolreartopleftmm')
+	
+    config.add_route('camcoolfrontbottrightmm', '/camcoolfrontbottrightmm')
+    config.add_view('cta_project.views.camcoolfrontbottrightmm', route_name = 'camcoolfrontbottrightmm')
+	
+    config.add_route('camcoolfronttoprightmm', '/camcoolfronttoprightmm')
+    config.add_view('cta_project.views.camcoolfronttoprightmm', route_name = 'camcoolfronttoprightmm')	
+	
+    config.add_route('amcerrmm', '/amcerrmm')
+    config.add_view('cta_project.views.amcerrmm', route_name = 'amcerrmm')
+
+    config.add_route('l1tmm', '/l1tmm')
+    config.add_view('cta_project.views.l1tmm', route_name = 'l1tmm')
+	
+    config.add_route('l2tmm', '/l2tmm')
+    config.add_view('cta_project.views.l2tmm', route_name = 'l2tmm')	
+	
+    config.add_route('l2t_daqmm', '/l2t_daqmm')
+    config.add_view('cta_project.views.l2t_daqmm', route_name = 'l2t_daqmm')	
+	
+    config.add_route('sumt_globrmm', '/sumt_globrmm')
+    config.add_view('cta_project.views.sumt_globrmm', route_name = 'sumt_globrmm')
+	
+    config.add_route('sumt_l3mm', '/sumt_l3mm')
+    config.add_view('cta_project.views.sumt_l3mm', route_name = 'sumt_l3mm')	
+	
+    config.add_route('sumt_dtwmm', '/sumt_dtwmm')
+    config.add_view('cta_project.views.sumt_dtwmm', route_name = 'sumt_dtwmm')
+	
+    config.add_route('sumt_cbt1mm', '/sumt_cbt1mm')
+    config.add_view('cta_project.views.sumt_cbt1mm', route_name = 'sumt_cbt1mm')
+	
+    config.add_route('sumt_cbt2mm', '/sumt_cbt2mm')
+    config.add_view('cta_project.views.sumt_cbt2mm', route_name = 'sumt_cbt2mm')	
+	
+    config.add_route('sumt_acmm', '/sumt_acmm')
+    config.add_view('cta_project.views.sumt_acmm', route_name = 'sumt_acmm')
+	
+    config.add_route('sumt_astrobmm', '/sumt_astrobmm')
+    config.add_view('cta_project.views.sumt_astrobmm', route_name = 'sumt_astrobmm')
+	
+    config.add_route('cool_cratemm', '/cool_cratemm')
+    config.add_view('cta_project.views.cool_cratemm', route_name = 'cool_cratemm')	
+	
+    config.add_route('cool_rackmm', '/cool_rackmm')
+    config.add_view('cta_project.views.cool_rackmm', route_name = 'cool_rackmm')	
+	
+    config.add_route('calbtemp1mm', '/calbtemp1mm')
+    config.add_view('cta_project.views.calbtemp1mm', route_name = 'calbtemp1mm')
+	
+    config.add_route('calbtemp2mm', '/calbtemp2mm')
+    config.add_view('cta_project.views.calbtemp2mm', route_name = 'calbtemp2mm')	
+	
+    config.add_route('calbhummm', '/calbhummm')
+    config.add_view('cta_project.views.calbhummm', route_name = 'calbhummm')
+	
+    config.add_route('sg_devazmm', '/sg_devazmm')
+    config.add_view('cta_project.views.sg_devazmm', route_name = 'sg_devazmm')
+	
+    config.add_route('sg_devzdmm', '/sg_devzdmm')
+    config.add_view('cta_project.views.sg_devzdmm', route_name = 'sg_devzdmm')	
+	
+    config.add_route('sg_camcxmm', '/sg_camcxmm')
+    config.add_view('cta_project.views.sg_camcxmm', route_name = 'sg_camcxmm')
+
+    config.add_route('sg_camcymm', '/sg_camcymm')
+    config.add_view('cta_project.views.sg_camcymm', route_name = 'sg_camcymm')
+	
+    config.add_route('sg_starsmm', '/sg_starsmm')
+    config.add_view('cta_project.views.sg_starsmm', route_name = 'sg_starsmm')	
+	
+    config.add_route('sg_brightmm', '/sg_brightmm')
+    config.add_view('cta_project.views.sg_brightmm', route_name = 'sg_brightmm')	
+	
+    config.add_route('wea_tempmm', '/wea_tempmm')
+    config.add_view('cta_project.views.wea_tempmm', route_name = 'wea_tempmm')
+	
+    config.add_route('pyro_cloudmm', '/pyro_cloudmm')
+    config.add_view('cta_project.views.pyro_cloudmm', route_name = 'pyro_cloudmm')	
+	
+    config.add_route('pyro_skytmm', '/pyro_skytmm')
+    config.add_view('cta_project.views.pyro_skytmm', route_name = 'pyro_skytmm')
+	
+    config.add_route('las_trans3kmmm', '/las_trans3kmmm')
+    config.add_view('cta_project.views.las_trans3kmmm', route_name = 'las_trans3kmmm')
+	
+    config.add_route('las_trans6kmmm', '/las_trans6kmmm')
+    config.add_view('cta_project.views.las_trans6kmmm', route_name = 'las_trans6kmmm')	
+	
+    config.add_route('las_trans9kmmm', '/las_trans9kmmm')
+    config.add_view('cta_project.views.las_trans9kmmm', route_name = 'las_trans9kmmm')
+	
+    config.add_route('las_trans12kmmm', '/las_trans12kmmm')
+    config.add_view('cta_project.views.las_trans12kmmm', route_name = 'las_trans12kmmm')
+	
+    config.add_route('muon_psfmm', '/muon_psfmm')
+    config.add_view('cta_project.views.muon_psfmm', route_name = 'muon_psfmm')	
+	
+    config.add_route('muon_psfnmm', '/muon_psfnmm')
+    config.add_view('cta_project.views.muon_psfnmm', route_name = 'muon_psfnmm')	
+	
+    config.add_route('muon_sizemm', '/muon_sizemm')
+    config.add_view('cta_project.views.muon_sizemm', route_name = 'muon_sizemm')
+	
+    config.add_route('sbigpsf_bmm', '/sbigpsf_bmm')
+    config.add_view('cta_project.views.sbigpsf_bmm', route_name = 'sbigpsf_bmm')	
+	
+    config.add_route('sbigpsf_lmm', '/sbigpsf_lmm')
+    config.add_view('cta_project.views.sbigpsf_lmm', route_name = 'sbigpsf_lmm')
+	
+    config.add_route('bias_sigmm', '/bias_sigmm')
+    config.add_view('cta_project.views.bias_sigmm', route_name = 'bias_sigmm')	
+	
+    config.add_route('hitfrac_sigmm', '/hitfrac_sigmm')
+    config.add_view('cta_project.views.hitfrac_sigmm', route_name = 'hitfrac_sigmm')
+	
+    config.add_route('arrtm_calmm', '/arrtm_calmm')
+    config.add_view('cta_project.views.arrtm_calmm', route_name = 'arrtm_calmm')	
+	
+    config.add_route('arrtm_intmm', '/arrtm_intmm')
+    config.add_view('cta_project.views.arrtm_intmm', route_name = 'arrtm_intmm')
+	
+    config.add_route('arrtm_sigmm', '/arrtm_sigmm')
+    config.add_view('cta_project.views.arrtm_sigmm', route_name = 'arrtm_sigmm')
+	
+    config.add_route('arrtmrms_calmm', '/arrtmrms_calmm')
+    config.add_view('cta_project.views.arrtmrms_calmm', route_name = 'arrtmrms_calmm')	
+	
+    config.add_route('arrtmrms_intmm', '/arrtmrms_intmm')
+    config.add_view('cta_project.views.arrtmrms_intmm', route_name = 'arrtmrms_intmm')
+	
+    config.add_route('arrtmrms_sigmm', '/arrtmrms_sigmm')
+    config.add_view('cta_project.views.arrtmrms_sigmm', route_name = 'arrtmrms_sigmm')
+	
+    config.add_route('ped_pedmm', '/ped_pedmm')
+    config.add_view('cta_project.views.ped_pedmm', route_name = 'ped_pedmm')	
+	
+    config.add_route('ped_intmm', '/ped_intmm')
+    config.add_view('cta_project.views.ped_intmm', route_name = 'ped_intmm')	
+	
+    config.add_route('npe_intmm', '/npe_intmm')
+    config.add_view('cta_project.views.npe_intmm', route_name = 'npe_intmm')
+	
+    config.add_route('pedrms_pedmm', '/pedrms_pedmm')
+    config.add_view('cta_project.views.pedrms_pedmm', route_name = 'pedrms_pedmm')	
+	
+    config.add_route('pedrms_intmm', '/pedrms_intmm')
+    config.add_view('cta_project.views.pedrms_intmm', route_name = 'pedrms_intmm')
+
+    config.add_route('cfact_intmm', '/cfact_intmm')
+    config.add_view('cta_project.views.cfact_intmm', route_name = 'cfact_intmm')
+    config.add_route('wea_wsymm', '/wea_wsymm')	
+    config.add_view('cta_project.views.wea_wsymm', route_name = 'wea_wsymm')
+    config.add_route('wea_humymm', '/wea_humymm')
+    config.add_view('cta_project.views.wea_humymm', route_name = 'wea_humymm')
+    config.add_route('wea_gustymm', '/wea_gustymm')
+    config.add_view('cta_project.views.wea_gustymm', route_name = 'wea_gustymm')
+	
+    config.add_route('wea_seeymm', '/wea_seeymm')
+    config.add_view('cta_project.views.wea_seeymm', route_name = 'wea_seeymm')
+	
+    config.add_route('wea_dustymm', '/wea_dustymm')
+    config.add_view('cta_project.views.wea_dustymm', route_name = 'wea_dustymm')	
+	
+    config.add_route('rec_tempymm', '/rec_tempymm')
+    config.add_view('cta_project.views.rec_tempymm', route_name = 'rec_tempymm')	
+	
+    config.add_route('camtd_daqymm', '/camtd_daqymm')
+    config.add_view('cta_project.views.camtd_daqymm', route_name = 'camtd_daqymm')
+	
+    config.add_route('camipr_daqymm', '/camipr_daqymm')
+    config.add_view('cta_project.views.camipr_daqymm', route_name = 'camipr_daqymm')	
+	
+    config.add_route('camiprerr_daqymm', '/camiprerr_daqymm')
+    config.add_view('cta_project.views.camiprerr_daqymm', route_name = 'camiprerr_daqymm')
+	
+    config.add_route('calq_calymm', '/calq_calymm')
+    config.add_view('cta_project.views.calq_calymm', route_name = 'calq_calymm')
+	
+    config.add_route('calq_intymm', '/calq_intymm')
+    config.add_view('cta_project.views.calq_intymm', route_name = 'calq_intymm')	
+	
+    config.add_route('calq_sigymm', '/calq_sigymm')
+    config.add_view('cta_project.views.calq_sigymm', route_name = 'calq_sigymm')
+
+    config.add_route('drvzdymm', '/drvzdymm')
+    config.add_view('cta_project.views.drvzdymm', route_name = 'drvzdymm')
+	
+    config.add_route('drvdev_daqymm', '/drvdev_daqymm')
+    config.add_view('cta_project.views.drvdev_daqymm', route_name = 'drvdev_daqymm')	
+	
+    config.add_route('camhv_daqymm', '/camhv_daqymm')
+    config.add_view('cta_project.views.camhv_daqymm', route_name = 'camhv_daqymm')	
+	
+    config.add_route('camdc_daqymm', '/camdc_daqymm')
+    config.add_view('cta_project.views.camdc_daqymm', route_name = 'camdc_daqymm')
+	
+    config.add_route('camdt_daqymm', '/camdt_daqymm')
+    config.add_view('cta_project.views.camdt_daqymm', route_name = 'camdt_daqymm')	
+	
+    config.add_route('campd_daqymm', '/campd_daqymm')
+    config.add_view('cta_project.views.campd_daqymm', route_name = 'campd_daqymm')
+	
+    config.add_route('campixtemp_daqymm', '/campixtemp_daqymm')
+    config.add_view('cta_project.views.campixtemp_daqymm', route_name = 'campixtemp_daqymm')
+	
+    config.add_route('meanpixtemp_daqymm', '/meanpixtemp_daqymm')
+    config.add_view('cta_project.views.meanpixtemp_daqymm', route_name = 'meanpixtemp_daqymm')	
+	
+    config.add_route('camclusttempymm', '/camclusttempymm')
+    config.add_view('cta_project.views.camclusttempymm', route_name = 'camclusttempymm')
+
+    config.add_route('camvcelbias_daqymm', '/camvcelbias_daqymm')
+    config.add_view('cta_project.views.camvcelbias_daqymm', route_name = 'camvcelbias_daqymm')
+	
+    config.add_route('camlv1tempymm', '/camlv1tempymm')
+    config.add_view('cta_project.views.camlv1tempymm', route_name = 'camlv1tempymm')	
+	
+    config.add_route('camlv2tempymm', '/camlv2tempymm')
+    config.add_view('cta_project.views.camlv2tempymm', route_name = 'camlv2tempymm')	
+	
+    config.add_route('camlv1humymm', '/camlv1humymm')
+    config.add_view('cta_project.views.camlv1humymm', route_name = 'camlv1humymm')
+	
+    config.add_route('camlv2humymm', '/camlv2humymm')
+    config.add_view('cta_project.views.camlv2humymm', route_name = 'camlv2humymm')	
+	
+    config.add_route('camcoolfcptopleftymm', '/camcoolfcptopleftymm')
+    config.add_view('cta_project.views.camcoolfcptopleftymm', route_name = 'camcoolfcptopleftymm')
+	
+    config.add_route('camcoolfcpbottrightymm', '/camcoolfcpbottrightymm')
+    config.add_view('cta_project.views.camcoolfcpbottrightymm', route_name = 'camcoolfcpbottrightymm')
+	
+    config.add_route('camcoolrcptopleftymm', '/camcoolrcptopleftymm')
+    config.add_view('cta_project.views.camcoolrcptopleftymm', route_name = 'camcoolrcptopleftymm')	
+	
+    config.add_route('camcoolrcpbottrightymm', '/camcoolrcpbottrightymm')
+    config.add_view('cta_project.views.camcoolrcpbottrightymm', route_name = 'camcoolrcpbottrightymm')
+
+    config.add_route('camcoolchasiastopleftymm', '/camcoolchasiastopleftymm')
+    config.add_view('cta_project.views.camcoolchasiastopleftymm', route_name = 'camcoolchasiastopleftymm')
+	
+    config.add_route('camcoolchasiasbottrightymm', '/camcoolchasiasbottrightymm')
+    config.add_view('cta_project.views.camcoolchasiasbottrightymm', route_name = 'camcoolchasiasbottrightymm')	
+	
+    config.add_route('camcoolchasiasftopleftymm', '/camcoolchasiasftopleftymm')
+    config.add_view('cta_project.views.camcoolchasiasftopleftymm', route_name = 'camcoolchasiasftopleftymm')	
+	
+    config.add_route('camcoolchasiasfbottrightymm', '/camcoolchasiasfbottrightymm')
+    config.add_view('cta_project.views.camcoolchasiasfbottrightymm', route_name = 'camcoolchasiasfbottrightymm')
+	
+    config.add_route('camcoolrearbottleftymm', '/camcoolrearbottleftymm')
+    config.add_view('cta_project.views.camcoolrearbottleftymm', route_name = 'camcoolrearbottleftymm')	
+	
+    config.add_route('camcoolreartopleftymm', '/camcoolreartopleftymm')
+    config.add_view('cta_project.views.camcoolreartopleftymm', route_name = 'camcoolreartopleftymm')
+	
+    config.add_route('camcoolfrontbottrightymm', '/camcoolfrontbottrightymm')
+    config.add_view('cta_project.views.camcoolfrontbottrightymm', route_name = 'camcoolfrontbottrightymm')
+	
+    config.add_route('camcoolfronttoprightymm', '/camcoolfronttoprightymm')
+    config.add_view('cta_project.views.camcoolfronttoprightymm', route_name = 'camcoolfronttoprightymm')	
+	
+    config.add_route('amcerrymm', '/amcerrymm')
+    config.add_view('cta_project.views.amcerrymm', route_name = 'amcerrymm')
+
+    config.add_route('l1tymm', '/l1tymm')
+    config.add_view('cta_project.views.l1tymm', route_name = 'l1tymm')
+	
+    config.add_route('l2tymm', '/l2tymm')
+    config.add_view('cta_project.views.l2tymm', route_name = 'l2tymm')	
+	
+    config.add_route('l2t_daqymm', '/l2t_daqymm')
+    config.add_view('cta_project.views.l2t_daqymm', route_name = 'l2t_daqymm')	
+	
+    config.add_route('sumt_globrymm', '/sumt_globrymm')
+    config.add_view('cta_project.views.sumt_globrymm', route_name = 'sumt_globrymm')
+	
+    config.add_route('sumt_l3ymm', '/sumt_l3ymm')
+    config.add_view('cta_project.views.sumt_l3ymm', route_name = 'sumt_l3ymm')	
+	
+    config.add_route('sumt_dtwymm', '/sumt_dtwymm')
+    config.add_view('cta_project.views.sumt_dtwymm', route_name = 'sumt_dtwymm')
+	
+    config.add_route('sumt_cbt1ymm', '/sumt_cbt1ymm')
+    config.add_view('cta_project.views.sumt_cbt1ymm', route_name = 'sumt_cbt1ymm')
+	
+    config.add_route('sumt_cbt2ymm', '/sumt_cbt2ymm')
+    config.add_view('cta_project.views.sumt_cbt2ymm', route_name = 'sumt_cbt2ymm')	
+	
+    config.add_route('sumt_acymm', '/sumt_acymm')
+    config.add_view('cta_project.views.sumt_acymm', route_name = 'sumt_acymm')
+	
+    config.add_route('sumt_astrobymm', '/sumt_astrobymm')
+    config.add_view('cta_project.views.sumt_astrobymm', route_name = 'sumt_astrobymm')
+	
+    config.add_route('cool_crateymm', '/cool_crateymm')
+    config.add_view('cta_project.views.cool_crateymm', route_name = 'cool_crateymm')	
+	
+    config.add_route('cool_rackymm', '/cool_rackymm')
+    config.add_view('cta_project.views.cool_rackymm', route_name = 'cool_rackymm')	
+	
+    config.add_route('calbtemp1ymm', '/calbtemp1ymm')
+    config.add_view('cta_project.views.calbtemp1ymm', route_name = 'calbtemp1ymm')
+	
+    config.add_route('calbtemp2ymm', '/calbtemp2ymm')
+    config.add_view('cta_project.views.calbtemp2ymm', route_name = 'calbtemp2ymm')	
+	
+    config.add_route('calbhumymm', '/calbhumymm')
+    config.add_view('cta_project.views.calbhumymm', route_name = 'calbhumymm')
+	
+    config.add_route('sg_devazymm', '/sg_devazymm')
+    config.add_view('cta_project.views.sg_devazymm', route_name = 'sg_devazymm')
+	
+    config.add_route('sg_devzdymm', '/sg_devzdymm')
+    config.add_view('cta_project.views.sg_devzdymm', route_name = 'sg_devzdymm')	
+	
+    config.add_route('sg_camcxymm', '/sg_camcxymm')
+    config.add_view('cta_project.views.sg_camcxymm', route_name = 'sg_camcxymm')
+
+    config.add_route('sg_camcyymm', '/sg_camcyymm')
+    config.add_view('cta_project.views.sg_camcyymm', route_name = 'sg_camcyymm')
+	
+    config.add_route('sg_starsymm', '/sg_starsymm')
+    config.add_view('cta_project.views.sg_starsymm', route_name = 'sg_starsymm')	
+	
+    config.add_route('sg_brightymm', '/sg_brightymm')
+    config.add_view('cta_project.views.sg_brightymm', route_name = 'sg_brightymm')	
+	
+    config.add_route('wea_tempymm', '/wea_tempymm')
+    config.add_view('cta_project.views.wea_tempymm', route_name = 'wea_tempymm')
+	
+    config.add_route('pyro_cloudymm', '/pyro_cloudymm')
+    config.add_view('cta_project.views.pyro_cloudymm', route_name = 'pyro_cloudymm')	
+	
+    config.add_route('pyro_skytymm', '/pyro_skytymm')
+    config.add_view('cta_project.views.pyro_skytymm', route_name = 'pyro_skytymm')
+	
+    config.add_route('las_trans3kmymm', '/las_trans3kmymm')
+    config.add_view('cta_project.views.las_trans3kmymm', route_name = 'las_trans3kmymm')
+	
+    config.add_route('las_trans6kmymm', '/las_trans6kmymm')
+    config.add_view('cta_project.views.las_trans6kmymm', route_name = 'las_trans6kmymm')	
+	
+    config.add_route('las_trans9kmymm', '/las_trans9kmymm')
+    config.add_view('cta_project.views.las_trans9kmymm', route_name = 'las_trans9kmymm')
+	
+    config.add_route('las_trans12kmymm', '/las_trans12kmymm')
+    config.add_view('cta_project.views.las_trans12kmymm', route_name = 'las_trans12kmymm')
+	
+    config.add_route('muon_psfymm', '/muon_psfymm')
+    config.add_view('cta_project.views.muon_psfymm', route_name = 'muon_psfymm')	
+	
+    config.add_route('muon_psfnymm', '/muon_psfnymm')
+    config.add_view('cta_project.views.muon_psfnymm', route_name = 'muon_psfnymm')	
+	
+    config.add_route('muon_sizeymm', '/muon_sizeymm')
+    config.add_view('cta_project.views.muon_sizeymm', route_name = 'muon_sizeymm')
+	
+    config.add_route('sbigpsf_bymm', '/sbigpsf_bymm')
+    config.add_view('cta_project.views.sbigpsf_bymm', route_name = 'sbigpsf_bymm')	
+	
+    config.add_route('sbigpsf_lymm', '/sbigpsf_lymm')
+    config.add_view('cta_project.views.sbigpsf_lymm', route_name = 'sbigpsf_lymm')
+	
+    config.add_route('bias_sigymm', '/bias_sigymm')
+    config.add_view('cta_project.views.bias_sigymm', route_name = 'bias_sigymm')	
+	
+    config.add_route('hitfrac_sigymm', '/hitfrac_sigymm')
+    config.add_view('cta_project.views.hitfrac_sigymm', route_name = 'hitfrac_sigymm')
+	
+    config.add_route('arrtm_calymm', '/arrtm_calymm')
+    config.add_view('cta_project.views.arrtm_calymm', route_name = 'arrtm_calymm')	
+	
+    config.add_route('arrtm_intymm', '/arrtm_intymm')
+    config.add_view('cta_project.views.arrtm_intymm', route_name = 'arrtm_intymm')
+	
+    config.add_route('arrtm_sigymm', '/arrtm_sigymm')
+    config.add_view('cta_project.views.arrtm_sigymm', route_name = 'arrtm_sigymm')
+	
+    config.add_route('arrtmrms_calymm', '/arrtmrms_calymm')
+    config.add_view('cta_project.views.arrtmrms_calymm', route_name = 'arrtmrms_calymm')	
+	
+    config.add_route('arrtmrms_intymm', '/arrtmrms_intymm')
+    config.add_view('cta_project.views.arrtmrms_intymm', route_name = 'arrtmrms_intymm')
+	
+    config.add_route('arrtmrms_sigymm', '/arrtmrms_sigymm')
+    config.add_view('cta_project.views.arrtmrms_sigymm', route_name = 'arrtmrms_sigymm')
+	
+    config.add_route('ped_pedymm', '/ped_pedymm')
+    config.add_view('cta_project.views.ped_pedymm', route_name = 'ped_pedymm')	
+	
+    config.add_route('ped_intymm', '/ped_intymm')
+    config.add_view('cta_project.views.ped_intymm', route_name = 'ped_intymm')	
+	
+    config.add_route('npe_intymm', '/npe_intymm')
+    config.add_view('cta_project.views.npe_intymm', route_name = 'npe_intymm')
+	
+    config.add_route('pedrms_pedymm', '/pedrms_pedymm')
+    config.add_view('cta_project.views.pedrms_pedymm', route_name = 'pedrms_pedymm')	
+	
+    config.add_route('pedrms_intymm', '/pedrms_intymm')
+    config.add_view('cta_project.views.pedrms_intymm', route_name = 'pedrms_intymm')
+
+    config.add_route('cfact_intymm', '/cfact_intymm')
+    config.add_view('cta_project.views.cfact_intymm', route_name = 'cfact_intymm')
+    config.add_route('wea_wsM2mm', '/wea_wsM2mm')
+    config.add_view('cta_project.views.wea_wsM2mm', route_name = 'wea_wsM2mm')
+    config.add_route('wea_humM2mm', '/wea_humM2M2mm')
+    config.add_view('cta_project.views.wea_humM2mm', route_name = 'wea_humM2mm')
+    config.add_route('wea_gustM2mm', '/wea_gustM2mm')
+    config.add_view('cta_project.views.wea_gustM2mm', route_name = 'wea_gustM2mm')
+	
+    config.add_route('wea_seeM2mm', '/wea_seeM2mm')
+    config.add_view('cta_project.views.wea_seeM2mm', route_name = 'wea_seeM2mm')
+	
+    config.add_route('wea_dustM2mm', '/wea_dustM2mm')
+    config.add_view('cta_project.views.wea_dustM2mm', route_name = 'wea_dustM2mm')	
+	
+    config.add_route('rec_tempM2mm', '/rec_tempM2mm')
+    config.add_view('cta_project.views.rec_tempM2mm', route_name = 'rec_tempM2mm')	
+	
+    config.add_route('camtd_daqM2mm', '/camtd_daqM2mm')
+    config.add_view('cta_project.views.camtd_daqM2mm', route_name = 'camtd_daqM2mm')
+	
+    config.add_route('camipr_daqM2mm', '/camipr_daqM2mm')
+    config.add_view('cta_project.views.camipr_daqM2mm', route_name = 'camipr_daqM2mm')	
+	
+    config.add_route('camiprerr_daqM2mm', '/camiprerr_daqM2mm')
+    config.add_view('cta_project.views.camiprerr_daqM2mm', route_name = 'camiprerr_daqM2mm')
+	
+    config.add_route('calq_calM2mm', '/calq_calM2mm')
+    config.add_view('cta_project.views.calq_calM2mm', route_name = 'calq_calM2mm')
+	
+    config.add_route('calq_intM2mm', '/calq_intM2mm')
+    config.add_view('cta_project.views.calq_intM2mm', route_name = 'calq_intM2mm')	
+	
+    config.add_route('calq_sigM2mm', '/calq_sigM2mm')
+    config.add_view('cta_project.views.calq_sigM2mm', route_name = 'calq_sigM2mm')
+
+    config.add_route('drvzdM2mm', '/drvzdM2mm')
+    config.add_view('cta_project.views.drvzdM2mm', route_name = 'drvzdM2mm')
+	
+    config.add_route('drvdev_daqM2mm', '/drvdev_daqM2mm')
+    config.add_view('cta_project.views.drvdev_daqM2mm', route_name = 'drvdev_daqM2mm')	
+	
+    config.add_route('camhv_daqM2mm', '/camhv_daqM2mm')
+    config.add_view('cta_project.views.camhv_daqM2mm', route_name = 'camhv_daqM2mm')	
+	
+    config.add_route('camdc_daqM2mm', '/camdc_daqM2mm')
+    config.add_view('cta_project.views.camdc_daqM2mm', route_name = 'camdc_daqM2mm')
+	
+    config.add_route('camdt_daqM2mm', '/camdt_daqM2mm')
+    config.add_view('cta_project.views.camdt_daqM2mm', route_name = 'camdt_daqM2mm')	
+	
+    config.add_route('campd_daqM2mm', '/campd_daqM2mm')
+    config.add_view('cta_project.views.campd_daqM2mm', route_name = 'campd_daqM2mm')
+	
+    config.add_route('campixtemp_daqM2mm', '/campixtemp_daqM2mm')
+    config.add_view('cta_project.views.campixtemp_daqM2mm', route_name = 'campixtemp_daqM2mm')
+	
+    config.add_route('meanpixtemp_daqM2mm', '/meanpixtemp_daqM2mm')
+    config.add_view('cta_project.views.meanpixtemp_daqM2mm', route_name = 'meanpixtemp_daqM2mm')	
+	
+    config.add_route('camclusttempM2mm', '/camclusttempM2mm')
+    config.add_view('cta_project.views.camclusttempM2mm', route_name = 'camclusttempM2mm')
+
+    config.add_route('camvcelbias_daqM2mm', '/camvcelbias_daqM2mm')
+    config.add_view('cta_project.views.camvcelbias_daqM2mm', route_name = 'camvcelbias_daqM2mm')
+	
+    config.add_route('camlv1tempM2mm', '/camlv1tempM2mm')
+    config.add_view('cta_project.views.camlv1tempM2mm', route_name = 'camlv1tempM2mm')	
+	
+    config.add_route('camlv2tempM2mm', '/camlv2tempM2mm')
+    config.add_view('cta_project.views.camlv2tempM2mm', route_name = 'camlv2tempM2mm')	
+	
+    config.add_route('camlv1humM2mm', '/camlv1humM2mm')
+    config.add_view('cta_project.views.camlv1humM2mm', route_name = 'camlv1humM2mm')
+	
+    config.add_route('camlv2humM2mm', '/camlv2humM2mm')
+    config.add_view('cta_project.views.camlv2humM2mm', route_name = 'camlv2humM2mm')	
+	
+    config.add_route('camcoolfcptopleftM2mm', '/camcoolfcptopleftM2mm')
+    config.add_view('cta_project.views.camcoolfcptopleftM2mm', route_name = 'camcoolfcptopleftM2mm')
+	
+    config.add_route('camcoolfcpbottrightM2mm', '/camcoolfcpbottrightM2mm')
+    config.add_view('cta_project.views.camcoolfcpbottrightM2mm', route_name = 'camcoolfcpbottrightM2mm')
+	
+    config.add_route('camcoolrcptopleftM2mm', '/camcoolrcptopleftM2mm')
+    config.add_view('cta_project.views.camcoolrcptopleftM2mm', route_name = 'camcoolrcptopleftM2mm')	
+	
+    config.add_route('camcoolrcpbottrightM2mm', '/camcoolrcpbottrightM2mm')
+    config.add_view('cta_project.views.camcoolrcpbottrightM2mm', route_name = 'camcoolrcpbottrightM2mm')
+
+    config.add_route('camcoolchasiastopleftM2mm', '/camcoolchasiastopleftM2mm')
+    config.add_view('cta_project.views.camcoolchasiastopleftM2mm', route_name = 'camcoolchasiastopleftM2mm')
+	
+    config.add_route('camcoolchasiasbottrightM2mm', '/camcoolchasiasbottrightM2mm')
+    config.add_view('cta_project.views.camcoolchasiasbottrightM2mm', route_name = 'camcoolchasiasbottrightM2mm')	
+	
+    config.add_route('camcoolchasiasftopleftM2mm', '/camcoolchasiasftopleftM2mm')
+    config.add_view('cta_project.views.camcoolchasiasftopleftM2mm', route_name = 'camcoolchasiasftopleftM2mm')	
+	
+    config.add_route('camcoolchasiasfbottrightM2mm', '/camcoolchasiasfbottrightM2mm')
+    config.add_view('cta_project.views.camcoolchasiasfbottrightM2mm', route_name = 'camcoolchasiasfbottrightM2mm')
+	
+    config.add_route('camcoolrearbottleftM2mm', '/camcoolrearbottleftM2mm')
+    config.add_view('cta_project.views.camcoolrearbottleftM2mm', route_name = 'camcoolrearbottleftM2mm')	
+	
+    config.add_route('camcoolreartopleftM2mm', '/camcoolreartopleftM2mm')
+    config.add_view('cta_project.views.camcoolreartopleftM2mm', route_name = 'camcoolreartopleftM2mm')
+	
+    config.add_route('camcoolfrontbottrightM2mm', '/camcoolfrontbottrightM2mm')
+    config.add_view('cta_project.views.camcoolfrontbottrightM2mm', route_name = 'camcoolfrontbottrightM2mm')
+	
+    config.add_route('camcoolfronttoprightM2mm', '/camcoolfronttoprightM2mm')
+    config.add_view('cta_project.views.camcoolfronttoprightM2mm', route_name = 'camcoolfronttoprightM2mm')	
+	
+    config.add_route('amcerrM2mm', '/amcerrM2mm')
+    config.add_view('cta_project.views.amcerrM2mm', route_name = 'amcerrM2mm')
+
+    config.add_route('l1tM2mm', '/l1tM2mm')
+    config.add_view('cta_project.views.l1tM2mm', route_name = 'l1tM2mm')
+	
+    config.add_route('l2tM2mm', '/l2tM2mm')
+    config.add_view('cta_project.views.l2tM2mm', route_name = 'l2tM2mm')	
+	
+    config.add_route('l2t_daqM2mm', '/l2t_daqM2mm')
+    config.add_view('cta_project.views.l2t_daqM2mm', route_name = 'l2t_daqM2mm')	
+	
+    config.add_route('sumt_globrM2mm', '/sumt_globrM2mm')
+    config.add_view('cta_project.views.sumt_globrM2mm', route_name = 'sumt_globrM2mm')
+	
+    config.add_route('sumt_l3M2mm', '/sumt_l3M2mm')
+    config.add_view('cta_project.views.sumt_l3M2mm', route_name = 'sumt_l3M2mm')	
+	
+    config.add_route('sumt_dtwM2mm', '/sumt_dtwM2mm')
+    config.add_view('cta_project.views.sumt_dtwM2mm', route_name = 'sumt_dtwM2mm')
+	
+    config.add_route('sumt_cbt1M2mm', '/sumt_cbt1M2mm')
+    config.add_view('cta_project.views.sumt_cbt1M2mm', route_name = 'sumt_cbt1M2mm')
+	
+    config.add_route('sumt_cbt2M2mm', '/sumt_cbt2M2mm')
+    config.add_view('cta_project.views.sumt_cbt2M2mm', route_name = 'sumt_cbt2M2mm')	
+	
+    config.add_route('sumt_acM2mm', '/sumt_acM2mm')
+    config.add_view('cta_project.views.sumt_acM2mm', route_name = 'sumt_acM2mm')
+	
+    config.add_route('sumt_astrobM2mm', '/sumt_astrobM2mm')
+    config.add_view('cta_project.views.sumt_astrobM2mm', route_name = 'sumt_astrobM2mm')
+	
+    config.add_route('cool_crateM2mm', '/cool_crateM2mm')
+    config.add_view('cta_project.views.cool_crateM2mm', route_name = 'cool_crateM2mm')	
+	
+    config.add_route('cool_rackM2mm', '/cool_rackM2mm')
+    config.add_view('cta_project.views.cool_rackM2mm', route_name = 'cool_rackM2mm')	
+	
+    config.add_route('calbtemp1M2mm', '/calbtemp1M2mm')
+    config.add_view('cta_project.views.calbtemp1M2mm', route_name = 'calbtemp1M2mm')
+	
+    config.add_route('calbtemp2M2mm', '/calbtemp2M2mm')
+    config.add_view('cta_project.views.calbtemp2M2mm', route_name = 'calbtemp2M2mm')	
+	
+    config.add_route('calbhumM2mm', '/calbhumM2mm')
+    config.add_view('cta_project.views.calbhumM2mm', route_name = 'calbhumM2mm')
+	
+    config.add_route('sg_devazM2mm', '/sg_devazM2mm')
+    config.add_view('cta_project.views.sg_devazM2mm', route_name = 'sg_devazM2mm')
+	
+    config.add_route('sg_devzdM2mm', '/sg_devzdM2mm')
+    config.add_view('cta_project.views.sg_devzdM2mm', route_name = 'sg_devzdM2mm')	
+	
+    config.add_route('sg_camcxM2mm', '/sg_camcxM2mm')
+    config.add_view('cta_project.views.sg_camcxM2mm', route_name = 'sg_camcxM2mm')
+
+    config.add_route('sg_camcyM2mm', '/sg_camcyM2mm')
+    config.add_view('cta_project.views.sg_camcyM2mm', route_name = 'sg_camcyM2mm')
+	
+    config.add_route('sg_starsM2mm', '/sg_starsM2mm')
+    config.add_view('cta_project.views.sg_starsM2mm', route_name = 'sg_starsM2mm')	
+	
+    config.add_route('sg_brightM2mm', '/sg_brightM2mm')
+    config.add_view('cta_project.views.sg_brightM2mm', route_name = 'sg_brightM2mm')	
+	
+    config.add_route('wea_tempM2mm', '/wea_tempM2mm')
+    config.add_view('cta_project.views.wea_tempM2mm', route_name = 'wea_tempM2mm')
+	
+    config.add_route('pyro_cloudM2mm', '/pyro_cloudM2mm')
+    config.add_view('cta_project.views.pyro_cloudM2mm', route_name = 'pyro_cloudM2mm')	
+	
+    config.add_route('pyro_skytM2mm', '/pyro_skytM2mm')
+    config.add_view('cta_project.views.pyro_skytM2mm', route_name = 'pyro_skytM2mm')
+	
+    config.add_route('las_trans3kmM2mm', '/las_trans3kmM2mm')
+    config.add_view('cta_project.views.las_trans3kmM2mm', route_name = 'las_trans3kmM2mm')
+	
+    config.add_route('las_trans6kmM2mm', '/las_trans6kmM2mm')
+    config.add_view('cta_project.views.las_trans6kmM2mm', route_name = 'las_trans6kmM2mm')	
+	
+    config.add_route('las_trans9kmM2mm', '/las_trans9kmM2mm')
+    config.add_view('cta_project.views.las_trans9kmM2mm', route_name = 'las_trans9kmM2mm')
+	
+    config.add_route('las_trans12kmM2mm', '/las_trans12kmM2mm')
+    config.add_view('cta_project.views.las_trans12kmM2mm', route_name = 'las_trans12kmM2mm')
+	
+    config.add_route('muon_psfM2mm', '/muon_psfM2mm')
+    config.add_view('cta_project.views.muon_psfM2mm', route_name = 'muon_psfM2mm')	
+	
+    config.add_route('muon_psfnM2mm', '/muon_psfnM2mm')
+    config.add_view('cta_project.views.muon_psfnM2mm', route_name = 'muon_psfnM2mm')	
+	
+    config.add_route('muon_sizeM2mm', '/muon_sizeM2mm')
+    config.add_view('cta_project.views.muon_sizeM2mm', route_name = 'muon_sizeM2mm')
+	
+    config.add_route('sbigpsf_bM2mm', '/sbigpsf_bM2mm')
+    config.add_view('cta_project.views.sbigpsf_bM2mm', route_name = 'sbigpsf_bM2mm')	
+	
+    config.add_route('sbigpsf_lM2mm', '/sbigpsf_lM2mm')
+    config.add_view('cta_project.views.sbigpsf_lM2mm', route_name = 'sbigpsf_lM2mm')
+	
+    config.add_route('bias_sigM2mm', '/bias_sigM2mm')
+    config.add_view('cta_project.views.bias_sigM2mm', route_name = 'bias_sigM2mm')	
+	
+    config.add_route('hitfrac_sigM2mm', '/hitfrac_sigM2mm')
+    config.add_view('cta_project.views.hitfrac_sigM2mm', route_name = 'hitfrac_sigM2mm')
+	
+    config.add_route('arrtm_calM2mm', '/arrtm_calM2mm')
+    config.add_view('cta_project.views.arrtm_calM2mm', route_name = 'arrtm_calM2mm')	
+	
+    config.add_route('arrtm_intM2mm', '/arrtm_intM2mm')
+    config.add_view('cta_project.views.arrtm_intM2mm', route_name = 'arrtm_intM2mm')
+	
+    config.add_route('arrtm_sigM2mm', '/arrtm_sigM2mm')
+    config.add_view('cta_project.views.arrtm_sigM2mm', route_name = 'arrtm_sigM2mm')
+	
+    config.add_route('arrtmrms_calM2mm', '/arrtmrms_calM2mm')
+    config.add_view('cta_project.views.arrtmrms_calM2mm', route_name = 'arrtmrms_calM2mm')	
+	
+    config.add_route('arrtmrms_intM2mm', '/arrtmrms_intM2mm')
+    config.add_view('cta_project.views.arrtmrms_intM2mm', route_name = 'arrtmrms_intM2mm')
+	
+    config.add_route('arrtmrms_sigM2mm', '/arrtmrms_sigM2mm')
+    config.add_view('cta_project.views.arrtmrms_sigM2mm', route_name = 'arrtmrms_sigM2mm')
+	
+    config.add_route('ped_pedM2mm', '/ped_pedM2mm')
+    config.add_view('cta_project.views.ped_pedM2mm', route_name = 'ped_pedM2mm')	
+	
+    config.add_route('ped_intM2mm', '/ped_intM2mm')
+    config.add_view('cta_project.views.ped_intM2mm', route_name = 'ped_intM2mm')	
+	
+    config.add_route('npe_intM2mm', '/npe_intM2mm')
+    config.add_view('cta_project.views.npe_intM2mm', route_name = 'npe_intM2mm')
+	
+    config.add_route('pedrms_pedM2mm', '/pedrms_pedM2mm')
+    config.add_view('cta_project.views.pedrms_pedM2mm', route_name = 'pedrms_pedM2mm')	
+	
+    config.add_route('pedrms_intM2mm', '/pedrms_intM2mm')
+    config.add_view('cta_project.views.pedrms_intM2mm', route_name = 'pedrms_intM2mm')
+
+    config.add_route('cfact_intM2mm', '/cfact_intM2mm')
+    config.add_view('cta_project.views.cfact_intM2mm', route_name = 'cfact_intM2mm')
+    config.add_route('wea_wsyM2mm', '/wea_wsyM2mm')	
+    config.add_view('cta_project.views.wea_wsyM2mm', route_name = 'wea_wsyM2mm')
+    config.add_route('wea_humyM2mm', '/wea_humyM2mm')
+    config.add_view('cta_project.views.wea_humyM2mm', route_name = 'wea_humyM2mm')
+    config.add_route('wea_gustyM2mm', '/wea_gustyM2mm')
+    config.add_view('cta_project.views.wea_gustyM2mm', route_name = 'wea_gustyM2mm')
+	
+    config.add_route('wea_seeyM2mm', '/wea_seeyM2mm')
+    config.add_view('cta_project.views.wea_seeyM2mm', route_name = 'wea_seeyM2mm')
+	
+    config.add_route('wea_dustyM2mm', '/wea_dustyM2mm')
+    config.add_view('cta_project.views.wea_dustyM2mm', route_name = 'wea_dustyM2mm')	
+	
+    config.add_route('rec_tempyM2mm', '/rec_tempyM2mm')
+    config.add_view('cta_project.views.rec_tempyM2mm', route_name = 'rec_tempyM2mm')	
+	
+    config.add_route('camtd_daqyM2mm', '/camtd_daqyM2mm')
+    config.add_view('cta_project.views.camtd_daqyM2mm', route_name = 'camtd_daqyM2mm')
+	
+    config.add_route('camipr_daqyM2mm', '/camipr_daqyM2mm')
+    config.add_view('cta_project.views.camipr_daqyM2mm', route_name = 'camipr_daqyM2mm')	
+	
+    config.add_route('camiprerr_daqyM2mm', '/camiprerr_daqyM2mm')
+    config.add_view('cta_project.views.camiprerr_daqyM2mm', route_name = 'camiprerr_daqyM2mm')
+	
+    config.add_route('calq_calyM2mm', '/calq_calyM2mm')
+    config.add_view('cta_project.views.calq_calyM2mm', route_name = 'calq_calyM2mm')
+	
+    config.add_route('calq_intyM2mm', '/calq_intyM2mm')
+    config.add_view('cta_project.views.calq_intyM2mm', route_name = 'calq_intyM2mm')	
+	
+    config.add_route('calq_sigyM2mm', '/calq_sigyM2mm')
+    config.add_view('cta_project.views.calq_sigyM2mm', route_name = 'calq_sigyM2mm')
+
+    config.add_route('drvzdyM2mm', '/drvzdyM2mm')
+    config.add_view('cta_project.views.drvzdyM2mm', route_name = 'drvzdyM2mm')
+	
+    config.add_route('drvdev_daqyM2mm', '/drvdev_daqyM2mm')
+    config.add_view('cta_project.views.drvdev_daqyM2mm', route_name = 'drvdev_daqyM2mm')	
+	
+    config.add_route('camhv_daqyM2mm', '/camhv_daqyM2mm')
+    config.add_view('cta_project.views.camhv_daqyM2mm', route_name = 'camhv_daqyM2mm')	
+	
+    config.add_route('camdc_daqyM2mm', '/camdc_daqyM2mm')
+    config.add_view('cta_project.views.camdc_daqyM2mm', route_name = 'camdc_daqyM2mm')
+	
+    config.add_route('camdt_daqyM2mm', '/camdt_daqyM2mm')
+    config.add_view('cta_project.views.camdt_daqyM2mm', route_name = 'camdt_daqyM2mm')	
+	
+    config.add_route('campd_daqyM2mm', '/campd_daqyM2mm')
+    config.add_view('cta_project.views.campd_daqyM2mm', route_name = 'campd_daqyM2mm')
+	
+    config.add_route('campixtemp_daqyM2mm', '/campixtemp_daqyM2mm')
+    config.add_view('cta_project.views.campixtemp_daqyM2mm', route_name = 'campixtemp_daqyM2mm')
+	
+    config.add_route('meanpixtemp_daqyM2mm', '/meanpixtemp_daqyM2mm')
+    config.add_view('cta_project.views.meanpixtemp_daqyM2mm', route_name = 'meanpixtemp_daqyM2mm')	
+	
+    config.add_route('camclusttempyM2mm', '/camclusttempyM2mm')
+    config.add_view('cta_project.views.camclusttempyM2mm', route_name = 'camclusttempyM2mm')
+
+    config.add_route('camvcelbias_daqyM2mm', '/camvcelbias_daqyM2mm')
+    config.add_view('cta_project.views.camvcelbias_daqyM2mm', route_name = 'camvcelbias_daqyM2mm')
+	
+    config.add_route('camlv1tempyM2mm', '/camlv1tempyM2mm')
+    config.add_view('cta_project.views.camlv1tempyM2mm', route_name = 'camlv1tempyM2mm')	
+	
+    config.add_route('camlv2tempyM2mm', '/camlv2tempyM2mm')
+    config.add_view('cta_project.views.camlv2tempyM2mm', route_name = 'camlv2tempyM2mm')	
+	
+    config.add_route('camlv1humyM2mm', '/camlv1humyM2mm')
+    config.add_view('cta_project.views.camlv1humyM2mm', route_name = 'camlv1humyM2mm')
+	
+    config.add_route('camlv2humyM2mm', '/camlv2humyM2mm')
+    config.add_view('cta_project.views.camlv2humyM2mm', route_name = 'camlv2humyM2mm')	
+	
+    config.add_route('camcoolfcptopleftyM2mm', '/camcoolfcptopleftyM2mm')
+    config.add_view('cta_project.views.camcoolfcptopleftyM2mm', route_name = 'camcoolfcptopleftyM2mm')
+	
+    config.add_route('camcoolfcpbottrightyM2mm', '/camcoolfcpbottrightyM2mm')
+    config.add_view('cta_project.views.camcoolfcpbottrightyM2mm', route_name = 'camcoolfcpbottrightyM2mm')
+	
+    config.add_route('camcoolrcptopleftyM2mm', '/camcoolrcptopleftyM2mm')
+    config.add_view('cta_project.views.camcoolrcptopleftyM2mm', route_name = 'camcoolrcptopleftyM2mm')	
+	
+    config.add_route('camcoolrcpbottrightyM2mm', '/camcoolrcpbottrightyM2mm')
+    config.add_view('cta_project.views.camcoolrcpbottrightyM2mm', route_name = 'camcoolrcpbottrightyM2mm')
+
+    config.add_route('camcoolchasiastopleftyM2mm', '/camcoolchasiastopleftyM2mm')
+    config.add_view('cta_project.views.camcoolchasiastopleftyM2mm', route_name = 'camcoolchasiastopleftyM2mm')
+	
+    config.add_route('camcoolchasiasbottrightyM2mm', '/camcoolchasiasbottrightyM2mm')
+    config.add_view('cta_project.views.camcoolchasiasbottrightyM2mm', route_name = 'camcoolchasiasbottrightyM2mm')	
+	
+    config.add_route('camcoolchasiasftopleftyM2mm', '/camcoolchasiasftopleftyM2mm')
+    config.add_view('cta_project.views.camcoolchasiasftopleftyM2mm', route_name = 'camcoolchasiasftopleftyM2mm')	
+	
+    config.add_route('camcoolchasiasfbottrightyM2mm', '/camcoolchasiasfbottrightyM2mm')
+    config.add_view('cta_project.views.camcoolchasiasfbottrightyM2mm', route_name = 'camcoolchasiasfbottrightyM2mm')
+	
+    config.add_route('camcoolrearbottleftyM2mm', '/camcoolrearbottleftyM2mm')
+    config.add_view('cta_project.views.camcoolrearbottleftyM2mm', route_name = 'camcoolrearbottleftyM2mm')	
+	
+    config.add_route('camcoolreartopleftyM2mm', '/camcoolreartopleftyM2mm')
+    config.add_view('cta_project.views.camcoolreartopleftyM2mm', route_name = 'camcoolreartopleftyM2mm')
+	
+    config.add_route('camcoolfrontbottrightyM2mm', '/camcoolfrontbottrightyM2mm')
+    config.add_view('cta_project.views.camcoolfrontbottrightyM2mm', route_name = 'camcoolfrontbottrightyM2mm')
+	
+    config.add_route('camcoolfronttoprightyM2mm', '/camcoolfronttoprightyM2mm')
+    config.add_view('cta_project.views.camcoolfronttoprightyM2mm', route_name = 'camcoolfronttoprightyM2mm')	
+	
+    config.add_route('amcerryM2mm', '/amcerryM2mm')
+    config.add_view('cta_project.views.amcerryM2mm', route_name = 'amcerryM2mm')
+
+    config.add_route('l1tyM2mm', '/l1tyM2mm')
+    config.add_view('cta_project.views.l1tyM2mm', route_name = 'l1tyM2mm')
+	
+    config.add_route('l2tyM2mm', '/l2tyM2mm')
+    config.add_view('cta_project.views.l2tyM2mm', route_name = 'l2tyM2mm')	
+	
+    config.add_route('l2t_daqyM2mm', '/l2t_daqyM2mm')
+    config.add_view('cta_project.views.l2t_daqyM2mm', route_name = 'l2t_daqyM2mm')	
+	
+    config.add_route('sumt_globryM2mm', '/sumt_globryM2mm')
+    config.add_view('cta_project.views.sumt_globryM2mm', route_name = 'sumt_globryM2mm')
+	
+    config.add_route('sumt_l3yM2mm', '/sumt_l3yM2mm')
+    config.add_view('cta_project.views.sumt_l3yM2mm', route_name = 'sumt_l3yM2mm')	
+	
+    config.add_route('sumt_dtwyM2mm', '/sumt_dtwyM2mm')
+    config.add_view('cta_project.views.sumt_dtwyM2mm', route_name = 'sumt_dtwyM2mm')
+	
+    config.add_route('sumt_cbt1yM2mm', '/sumt_cbt1yM2mm')
+    config.add_view('cta_project.views.sumt_cbt1yM2mm', route_name = 'sumt_cbt1yM2mm')
+	
+    config.add_route('sumt_cbt2yM2mm', '/sumt_cbt2yM2mm')
+    config.add_view('cta_project.views.sumt_cbt2yM2mm', route_name = 'sumt_cbt2yM2mm')	
+	
+    config.add_route('sumt_acyM2mm', '/sumt_acyM2mm')
+    config.add_view('cta_project.views.sumt_acyM2mm', route_name = 'sumt_acyM2mm')
+	
+    config.add_route('sumt_astrobyM2mm', '/sumt_astrobyM2mm')
+    config.add_view('cta_project.views.sumt_astrobyM2mm', route_name = 'sumt_astrobyM2mm')
+	
+    config.add_route('cool_crateyM2mm', '/cool_crateyM2mm')
+    config.add_view('cta_project.views.cool_crateyM2mm', route_name = 'cool_crateyM2mm')	
+	
+    config.add_route('cool_rackyM2mm', '/cool_rackyM2mm')
+    config.add_view('cta_project.views.cool_rackyM2mm', route_name = 'cool_rackyM2mm')	
+	
+    config.add_route('calbtemp1yM2mm', '/calbtemp1yM2mm')
+    config.add_view('cta_project.views.calbtemp1yM2mm', route_name = 'calbtemp1yM2mm')
+	
+    config.add_route('calbtemp2yM2mm', '/calbtemp2yM2mm')
+    config.add_view('cta_project.views.calbtemp2yM2mm', route_name = 'calbtemp2yM2mm')	
+	
+    config.add_route('calbhumyM2mm', '/calbhumyM2mm')
+    config.add_view('cta_project.views.calbhumyM2mm', route_name = 'calbhumyM2mm')
+	
+    config.add_route('sg_devazyM2mm', '/sg_devazyM2mm')
+    config.add_view('cta_project.views.sg_devazyM2mm', route_name = 'sg_devazyM2mm')
+	
+    config.add_route('sg_devzdyM2mm', '/sg_devzdyM2mm')
+    config.add_view('cta_project.views.sg_devzdyM2mm', route_name = 'sg_devzdyM2mm')	
+	
+    config.add_route('sg_camcxyM2mm', '/sg_camcxyM2mm')
+    config.add_view('cta_project.views.sg_camcxyM2mm', route_name = 'sg_camcxyM2mm')
+
+    config.add_route('sg_camcyyM2mm', '/sg_camcyyM2mm')
+    config.add_view('cta_project.views.sg_camcyyM2mm', route_name = 'sg_camcyyM2mm')
+	
+    config.add_route('sg_starsyM2mm', '/sg_starsyM2mm')
+    config.add_view('cta_project.views.sg_starsyM2mm', route_name = 'sg_starsyM2mm')	
+	
+    config.add_route('sg_brightyM2mm', '/sg_brightyM2mm')
+    config.add_view('cta_project.views.sg_brightyM2mm', route_name = 'sg_brightyM2mm')	
+	
+    config.add_route('wea_tempyM2mm', '/wea_tempyM2mm')
+    config.add_view('cta_project.views.wea_tempyM2mm', route_name = 'wea_tempyM2mm')
+	
+    config.add_route('pyro_cloudyM2mm', '/pyro_cloudyM2mm')
+    config.add_view('cta_project.views.pyro_cloudyM2mm', route_name = 'pyro_cloudyM2mm')	
+	
+    config.add_route('pyro_skytyM2mm', '/pyro_skytyM2mm')
+    config.add_view('cta_project.views.pyro_skytyM2mm', route_name = 'pyro_skytyM2mm')
+	
+    config.add_route('las_trans3kmyM2mm', '/las_trans3kmyM2mm')
+    config.add_view('cta_project.views.las_trans3kmyM2mm', route_name = 'las_trans3kmyM2mm')
+	
+    config.add_route('las_trans6kmyM2mm', '/las_trans6kmyM2mm')
+    config.add_view('cta_project.views.las_trans6kmyM2mm', route_name = 'las_trans6kmyM2mm')	
+	
+    config.add_route('las_trans9kmyM2mm', '/las_trans9kmyM2mm')
+    config.add_view('cta_project.views.las_trans9kmyM2mm', route_name = 'las_trans9kmyM2mm')
+	
+    config.add_route('las_trans12kmyM2mm', '/las_trans12kmyM2mm')
+    config.add_view('cta_project.views.las_trans12kmyM2mm', route_name = 'las_trans12kmyM2mm')
+	
+    config.add_route('muon_psfyM2mm', '/muon_psfyM2mm')
+    config.add_view('cta_project.views.muon_psfyM2mm', route_name = 'muon_psfyM2mm')	
+	
+    config.add_route('muon_psfnyM2mm', '/muon_psfnyM2mm')
+    config.add_view('cta_project.views.muon_psfnyM2mm', route_name = 'muon_psfnyM2mm')	
+	
+    config.add_route('muon_sizeyM2mm', '/muon_sizeyM2mm')
+    config.add_view('cta_project.views.muon_sizeyM2mm', route_name = 'muon_sizeyM2mm')
+	
+    config.add_route('sbigpsf_byM2mm', '/sbigpsf_byM2mm')
+    config.add_view('cta_project.views.sbigpsf_byM2mm', route_name = 'sbigpsf_byM2mm')	
+	
+    config.add_route('sbigpsf_lyM2mm', '/sbigpsf_lyM2mm')
+    config.add_view('cta_project.views.sbigpsf_lyM2mm', route_name = 'sbigpsf_lyM2mm')
+	
+    config.add_route('bias_sigyM2mm', '/bias_sigyM2mm')
+    config.add_view('cta_project.views.bias_sigyM2mm', route_name = 'bias_sigyM2mm')	
+	
+    config.add_route('hitfrac_sigyM2mm', '/hitfrac_sigyM2mm')
+    config.add_view('cta_project.views.hitfrac_sigyM2mm', route_name = 'hitfrac_sigyM2mm')
+	
+    config.add_route('arrtm_calyM2mm', '/arrtm_calyM2mm')
+    config.add_view('cta_project.views.arrtm_calyM2mm', route_name = 'arrtm_calyM2mm')	
+	
+    config.add_route('arrtm_intyM2mm', '/arrtm_intyM2mm')
+    config.add_view('cta_project.views.arrtm_intyM2mm', route_name = 'arrtm_intyM2mm')
+	
+    config.add_route('arrtm_sigyM2mm', '/arrtm_sigyM2mm')
+    config.add_view('cta_project.views.arrtm_sigyM2mm', route_name = 'arrtm_sigyM2mm')
+	
+    config.add_route('arrtmrms_calyM2mm', '/arrtmrms_calyM2mm')
+    config.add_view('cta_project.views.arrtmrms_calyM2mm', route_name = 'arrtmrms_calyM2mm')	
+	
+    config.add_route('arrtmrms_intyM2mm', '/arrtmrms_intyM2mm')
+    config.add_view('cta_project.views.arrtmrms_intyM2mm', route_name = 'arrtmrms_intyM2mm')
+	
+    config.add_route('arrtmrms_sigyM2mm', '/arrtmrms_sigyM2mm')
+    config.add_view('cta_project.views.arrtmrms_sigyM2mm', route_name = 'arrtmrms_sigyM2mm')
+	
+    config.add_route('ped_pedyM2mm', '/ped_pedyM2mm')
+    config.add_view('cta_project.views.ped_pedyM2mm', route_name = 'ped_pedyM2mm')	
+	
+    config.add_route('ped_intyM2mm', '/ped_intyM2mm')
+    config.add_view('cta_project.views.ped_intyM2mm', route_name = 'ped_intyM2mm')	
+	
+    config.add_route('npe_intyM2mm', '/npe_intyM2mm')
+    config.add_view('cta_project.views.npe_intyM2mm', route_name = 'npe_intyM2mm')
+	
+    config.add_route('pedrms_pedyM2mm', '/pedrms_pedyM2mm')
+    config.add_view('cta_project.views.pedrms_pedyM2mm', route_name = 'pedrms_pedyM2mm')	
+	
+    config.add_route('pedrms_intyM2mm', '/pedrms_intyM2mm')
+    config.add_view('cta_project.views.pedrms_intyM2mm', route_name = 'pedrms_intyM2mm')
+
+    config.add_route('cfact_intyM2mm', '/cfact_intyM2mm')
+    config.add_view('cta_project.views.cfact_intyM2mm', route_name = 'cfact_intyM2mm')	
     # MongoDB
     def add_mongo_db(event):
         settings = event.request.registry.settings
