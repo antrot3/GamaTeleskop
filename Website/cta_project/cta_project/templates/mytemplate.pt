@@ -148,7 +148,12 @@
 														<option class ="parameterx" value="muon_psfn">Number of muons for PSF calc</option>
 														<option class ="parameterx" value="muon_size">Mean muon size</option>
 												</optgroup>
-					</select>							
+					</select>
+					<br>
+					<select name="param1-min-max" id="param1-min-max" class="selectpicker" data-live-search="true" style="display: none;">
+						<option class="display_p1" selected="">Mean-Median-RMS</option>
+						<option class="display_p1">Min-Max</option>
+					</select>					
 					<div class="checkbox">
 						<label for="p1errors">
 							<input type="hidden" name="param1_errors" value="false">
@@ -262,6 +267,11 @@
 														<option class = "parametery" value="muon_psfn">Number of muons for PSF calc</option>
 														<option class = "parametery" value="muon_size">Mean muon size</option>
 												</optgroup>
+					</select>
+					<br>
+					<select name="param2-min-max" id="param2-min-max" class="selectpicker" data-live-search="true" style="display: none;">
+						<option class="display_p2" selected="">Mean-Median-RMS</option>
+						<option class="display_p2">Min-Max</option>
 					</select>
 					<div class="checkbox">
 						<label for="p2errors">
@@ -886,22 +896,31 @@ default:
 		break;
 	}
 });
+param1_mm = 'Mean-Median-RMS';
+param2_mm = 'Mean-Median-RMS';
 $('.spec_t1').click(function(){
 telescopex = this.text;
 });
 $('.spec_t2').click(function(){
 telescopey = this.text;
 });
-
+$('.display_p1').click(function(){
+param1_mm = this.text;
+});
+$('.display_p2').click(function(){
+param2_mm = this.text;
+});
 
 	$('.btn.btn-block.pull-left').click(function(){
 	var datumod = $('#datefrom').datepicker('getDate');
 	var datumdo = $('#dateto').datepicker('getDate');
 	var tempdate = new Date('2016-12-31');
+	
 	if(datumod > tempdate)
 	datumod = new Date('2012-12-10');
 	if(datumdo > tempdate)
 	datumdo = new Date('2014-03-05');
+	
 	if(telescopex == "M1")
     var URL1 = "http://symmetry.fesb.hr/MAGICLTM/" + e;
 	else
@@ -911,6 +930,12 @@ telescopey = this.text;
 	var URL2 = "http://symmetry.fesb.hr/MAGICLTM/" + y + "y";
 	else
 	var URL2 = "http://symmetry.fesb.hr/MAGICLTM/" + y + "y" + "M2";
+	
+	if(param1_mm == 'Min-Max')
+	URL1 = URL1 + 'mm';
+	
+	if(param2_mm == 'Min-Max')
+	URL2 = URL2 + 'mm';
 	
 	if($('#p1errors').is(":checked")){
         g9 = new Dygraph(
