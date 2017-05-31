@@ -1,0 +1,6 @@
+1. Skinuti kod aplikacije sa githuba ( Website/cta_project ) i staviti ga na server u datoteku var/www/html
+2. U folderu konfiguracijske datoteke nalaze se 2 file-a. File modwsgi.conf potrebno je kopirati u etc/httpd/conf.d
+3. Drugi konfiguracijski file pyramid.wsgi potrebno je kopirati u virtual environment folder aplikacije. ( Upute za kreiranje virtualnog environment-a mogu se pronaci na stranici http://docs.pylonsproject.org ).
+5. U obe datoteke potrebno je promijeniti path do vaseg foldera ( primjerice moj path je /var/www/html/jmatic potrebno je promijeniti u /var/www/html/naziv_foldera)
+6. Nadalje potrebno je promijeniti pathove u views.py datoteci koja se nalazi u GamaTeleskop\Website\cta_project\cta_project folderu te u mytemplate.pt file-u koji se nalazi u GamaTeleskop\Website\cta_project\cta_project\templates folderu ( kod views.py daoteke koristite find and replace opciju da promijenite sve pathove )
+7. Restartirati apache server
