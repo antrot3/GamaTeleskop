@@ -33,6 +33,7 @@
 	<script src="${request.static_url('cta_project:static/js/button.js')}"></script>
 	<link href="${request.static_url('cta_project:static/css/Datepicker.css')}" rel="stylesheet" media="screen">
 	<script src="${request.static_url('cta_project:static/js/Datepicker.js')}"></script>
+	<script src="${request.static_url('cta_project:static/js/dygraph-extra.js')}"></script>
   </head>
 
  <body>
